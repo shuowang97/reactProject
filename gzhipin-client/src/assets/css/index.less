@@ -1,0 +1,30 @@
+.error-msg{
+  color: red;
+  text-align: center;
+  font-size: 18px;
+}
+// 这个是F12找到的classname  由antd-mobile封装的 可以给它加格式 使tab-bar始终在底部
+.am-tab-bar{
+  position: fixed;
+  bottom: 0;
+  height: inherit; //包裹内容 内容多高 容器就多高
+  width: 100%;
+}
+
+//使标题始终固定在顶部
+.stick-head{
+  z-index: 10;
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
+#chat-page .chat-me .am-list-extra{
+  flex-basis: auto; //宽度包裹内容
+}
+
+//自发的消息文本居右
+#chat-page .chat-me .am-list-content{
+  padding-right: 20px;
+  text-align: right;
+}
