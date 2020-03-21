@@ -1,3 +1,3 @@
 # reactProject
 
-This is the source codes of the project inside another repository "deployVersion-MERN project". For the function of this project, please check readme in "deployVersion" repository.
+This is the source codes of the project. For the readme file of this project, please check readme in "deployVersion-MERN project" repository.
