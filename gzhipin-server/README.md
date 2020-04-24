@@ -1,32 +1,38 @@
-# 接口文档
+# A Full-Stack Project based on MERN 
 
-## 目录：
-[1、注册](#1注册)<br/>
-[2、登陆](#2登陆)<br/>
-[3、更新用户信息](#3更新用户信息)<br/>
-[4、获取当前的user(根据cookie)](#4获取当前的user(根据cookie))<br/>
-[5、获取用户列表](#5获取用户列表)<br/>
-[6、获取当前用户的聊天消息列表](#6获取当前用户的聊天消息列表)<br/>
-[7、 修改指定消息为已读](#7修改指定消息为已读)<br/>
+## Front End: ReactJS, AntD-UI, Less.      BackEnd: NodeJS(Express) 
+
+- Designed to help people find jobs, where all recruiters and job seekers can sign up and chat online instantly, based on MERN(MongoDB, Express, React&Redux, NodeJS) stack, and deployed on Heroku.
+- Leveraged AntD-UI and React to design the UI components in client end, and Express in server end. 
+- Accomplished asynchronous interactions with Await&Async and utilized Redux for state management. 
+- Set up project routes by react-router-dom and chat online instantly by Socket.io.
+
+### This is the deploy version of this project, for source codes, please look at repository called MERN-Project. 
 
 
-## 1、注册
+# API documents
 
-### 请求URL：
+
+## 1、Register
+
+### Request URL：
+
 	localhost:3005/register
 
-### 请求方式：
+### Request Method：
+
 	POST
 
-### 参数类型
+### Argument type
 
-	|参数		|是否必选 |类型     |说明
-	|username    |Y       |string   |用户名
-	|password    |Y       |string   |密码
-	|type        |Y       |string   |类型
+	|Argument    |Not Null |Type     |Description
+	|username    |Y        |string   |UserName
+	|password    |Y        |string   |Password
+	|type        |Y        |string   |Type
 
-### 返回示例：
-	成功:
+### Example of response：
+
+	Success:
 	    {
 	      "code": 0,
 	      "data": {
@@ -35,29 +41,32 @@
 	        "type": "dashen"
 	      }
 	    }
-	失败
+	Fail
 	    {
 	      "code": 1,
-	      "msg": "此用户已存在"
+	      "msg": "User Exists"
 	    }
 
 
-## 2、登陆
+## 2、Login
 
-### 请求URL：
+### Request URL：
+
 	localhost:3005/login
 
-### 请求方式：
+### Request Method：
+
 	POST
 
-### 参数类型
+### Argument type:
 
-	|参数		|是否必选 |类型     |说明
-	|username    |Y       |string   |用户名
-	|password    |Y       |string   |密码
+	|Argument    |Not Null |Type     |Description
+	|username    |Y        |string   |UserName
+	|password    |Y        |string   |Password
 
-### 返回示例：
-	成功:
+### Example of response：
+
+	Success:
 	    {
 	      "code": 0,
 	      "data": {
@@ -67,31 +76,34 @@
 	        "__v": 0
 	      }
 	    }
-	失败
+	Fail
 	    {
 	      "code": 1,
-	      "msg": "用户名或密码错误"
+	      "msg": "invalid username or password"
 	    }
 
-## 3、更新用户信息
+## 3、Update User Infomation
 
-### 请求URL：
+### Request URL：
+
 	localhost:3005/update
 
-### 请求方式：
+### Request Method：
+
 	POST
 
-### 参数类型：
+### Argument Type：
 
-	|参数		|是否必选 |类型     |说明
-	|header    |Y       |string   |头像名称
-	|info      |N       |string   |介绍
-	|post      |N       |string   |职位
-	|salary    |N       |string   |月薪
-	|company   |N       |string   |公司
+	|Argument  |Not Null |Type     |Description
+	|header    |Y        |string   |头像名称(header)
+	|info      |N        |string   |介绍(description)
+	|post      |N        |string   |职位(position)
+	|salary    |N        |string   |月薪(salary)
+	|company   |N        |string   |公司(company)
 
-### 返回示例：
-	成功:
+### Example of response：
+
+	Success:
 	    {
 		    "code": 0,
 		    "data": {
@@ -105,27 +117,30 @@
 		        "type": "laoban"
 		    }
 		}
-	失败
+	Fail
 	    {
 	      "code": 1,
-	      "msg": "请先登陆"
+	      "msg": "please log in"
 	    }
 
 
-## 4、获取当前的user(根据cookie)
+## 4、Get the current user based on cookie
 
-### 请求URL：
+### Request URL：
+
 	localhost:3005/user
 
-### 请求方式：
+### Request Method：
+
 	GET
 
-### 参数类型
+### Argument Type
 
-	无
+	None
 
-### 返回示例：
-	成功:
+### Example of response：
+
+	Success:
 	    {
 		    "code": 0,
 		    "data": {
@@ -140,27 +155,30 @@
 		        "header": "头像2"
 		    }
 		}
-	失败
+	Fail
 	    {
 	      "code": 1,
-	      "msg": "请先登陆"
+	      "msg": "please log in"
 	    }
 
 
-## 5、获取用户列表
+## 5、Get user lists
 
-### 请求URL：
+### Request URL：
+
 	localhost:3005/userlist
 
-### 请求方式：
+### Request Method：
+
 	GET
 
-### 参数类型
+### Argument Type: query
 
-	|参数		|是否必选 |类型     |说明
-	|type       |Y       |string   |类型(dashen/laoban)
+	|Argument   |Not Null |Type     |Description
+	|type       |Y        |string   |Type(dashen/laoban)
 
-### 返回示例：
+### Example of response：
+
 	{
 	    "code": 0,
 	    "data": [
@@ -181,20 +199,24 @@
 	        }
 	    ]
 	}
-	
 
-## 6、获取当前用户的聊天消息列表
 
-### 请求URL：
+## 6、Get message lists of current user
+
+### Request URL：
+
 	localhost:3005/msglist
 
-### 请求方式：
+### Request Method：
+
 	GET
 
-### 参数类型
-	无
+### Argument Type
 
-### 返回示例：
+	None
+
+### Example of response：
+
 	{
 	    "code": 0,
 	    "data": {
@@ -232,4 +254,21 @@
 	    }
 	}
 
-## 7、 修改指定消息为已读
+## 7、 Change the status of message to read
+
+### Request URL：
+
+	localhost:3005/readmsg
+
+### Request Method：
+
+	post
+
+### Argument Type
+
+	|Argument   |Not Null |Type     |Description
+	|from       |Y        |string   |发送消息用户的id(the user that sends message)
+
+### Example of response：
+
+	{code: 0, data: 2}
